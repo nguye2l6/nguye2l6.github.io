@@ -262,11 +262,9 @@
           function displayJoke() {
             $.get("https://v2.jokeapi.dev/joke/Any", function (result) {
               if (result.length != 0) {
-                $("#response").html(encodeString(result.joke));
-                $("#response").html("test");
+                $("#response").innerHTML(encodeString(result.joke));s
               } else {
-                $("#response".html("Null input"));
-                $("#response").html("test2");
+                $("#response".innerHTML("Null input"));
               }
             });
           }
