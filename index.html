@@ -258,25 +258,26 @@
         </div>
         <h3 class="resume-title">Joke of the Day (DISCLAIMER: RANDOM JOKE BY WEBAPI)</h3>
         <div id="response"></div>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"> </script>
+        <br>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"> </script>
         <script>
           function displayJoke() {
             $.get("https://v2.jokeapi.dev/joke/Any?type=single", function (result) {
               if (result) {
                 document.getElementById("response").innerText = JSON.stringify(result.joke);
-                alert("here");
               } else {
                 document.getElementById("response").innerText = "Null input";
-                alert("there");
               }
             });
           }
           displayJoke();
-          setInterval(displayJoke, 10000);
+          setInterval(displayJoke, 60000);
         </script>
         <div class="row">
           <!-- column one-->
-          <div class="col"> 
+          <div class="col">
             <div id="email" onclick="showhideEmail()">Show my email</div>
             <script>
               var shown = false;
@@ -292,9 +293,7 @@
                 }
               }
             </script>
-          </div>
-          <!--col two-->
-          <div class="col"> 
+
             <div id="digit-clock"></div>
             <script>
               function displayTime() {
@@ -319,20 +318,33 @@
               }
             </script>
           </div>
+          <!--col two-->
+          <div class="col">
+            <!-- page tracker -->
+            <a href="https://info.flagcounter.com/R4wV"><img
+                src="https://s11.flagcounter.com/map/R4wV/size_s/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/"
+                alt="Flag Counter" border="0"></a>
+          </div>
         </div> <!-- end row-->
         <div class="row">
           <div class="col">
-
+            <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+            <div id="embed-iframe"></div>
+            <script>
+              window.onSpotifyIframeApiReady = (IFrameAPI) => {
+                const element = document.getElementById('embed-iframe');
+                const options = {
+                  uri: 'spotify:episode:4yg3BiEztuvnH27Qn8OOZv?si=0e1f3f67eeb5469e'
+                };
+                const callback = (EmbedController) => { };
+                IFrameAPI.createController(element, options, callback);
+              };
+            </script>
           </div>
           <div class="col">
 
           </div>
         </div>
-
-        <!-- page tracker -->
-        <a href="https://info.flagcounter.com/R4wV"><img
-            src="https://s11.flagcounter.com/map/R4wV/size_s/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/"
-            alt="Flag Counter" border="0"></a>
         <!-- Cookies -->
         <script>
           const date = new Date();
