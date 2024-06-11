@@ -375,8 +375,8 @@
                 }
               }).mount('#app');
             </script>
-            <div id="app">{{ displayText }}</div>
-            <strong :class="{green: isGreen} @click="toggleGreen"> Click this text to toggle it green! </strong>
+            <strong id="app">{{ displayText }}</strong>
+            <p :class="{green: isGreen} @click="toggleGreen"> Click this text to toggle it green! </p>
             </div>
           </div>
         </div>
