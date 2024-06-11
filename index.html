@@ -344,10 +344,11 @@
             </script>
           </div>
           <div class="col"> <!-- VUE.JS -->
+            <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
             <script type="module">
-              import {buttonFunc, bref} from 'vue'
+              import {createApp, bref} from 'vue'
 
-              buttonFunc({
+              createApp({
                 setup(){
                   
                   const message = ref('Created Using VUE.JS')
@@ -355,9 +356,9 @@
                     message
                   }
                 }
-              }).mount('#vuejs')
+              }).mount('#app')
             </script>
-            <div id="vuejs"> {{ message }} </div>
+            <div id="app"> {{ message }} </div>
             
             </div>
           </div>
