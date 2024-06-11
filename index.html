@@ -249,7 +249,9 @@
 
       </div>
     </section><!-- End Resume Section -->
+    <section id="portfolio">
 
+    </section>
     <!-- ======= JavaScript Section ======= -->
     <section id="javascript">
       <div class="container" data-aos="fade-up">
@@ -341,8 +343,23 @@
               };
             </script>
           </div>
-          <div class="col">
+          <div class="col"> <!-- VUE.JS -->
+            <script type="module">
+              import {buttonFunc, bref} from 'vue'
 
+              buttonFunc({
+                setup(){
+                  
+                  const message = ref('Created Using VUE.JS')
+                  return {
+                    message
+                  }
+                }
+              }).mount('#vuejs')
+            </script>
+            <div id="vuejs"> {{ message }} </div>
+            
+            </div>
           </div>
         </div>
         <!-- Cookies -->
