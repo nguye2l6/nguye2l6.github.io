@@ -30,7 +30,15 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- Vue.JS -->
-   <script src="https://unpkg.com/vue@3"></script>
+   <script type=""importmap">
+  {
+  "imports": {
+    "vue": "https://unpkg.com/vue@3.4.27/dist/vue.esm-browser.js",
+    "vue/server-renderer": "https://cdn.jsdelivr.net/npm/@vue/server-renderer@3.4.27/dist/server-renderer.esm-browser.js"
+  },
+  "scopes": {}
+}
+  </script>
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -348,12 +356,11 @@
           </div>
           <div class="col"> <!-- VUE.JS -->
             <script type="module">
-              Vue.createApp({
-
+              import {createApp, ref} from 'vue'
+              createApp({
                 setup() {
                   const isGreen = ref(true)
                   const displayText = 'Created Using VueJS'
-                }
 
                 function toggleGreen() {
                   isGreen.value = !isGreen.value
