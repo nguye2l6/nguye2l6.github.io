@@ -301,8 +301,8 @@
           if(document.cookie.indexOf("alias")<0){
               let alias = prompt("Welcome to my homepage! Please enter an alias: ","");
               const date = new Date();
-              setCookie("alias", alias, 31);
-              setCookie("date",date,31);
+              document.cookie = "alias" + "=" + alias + ";";
+              document.cookie = "date" + "=" + date + ";";
           }else{
             let name = getCookie("alias");
             let date = getCookie("date");
