@@ -257,6 +257,24 @@
           <h2>JavaScript</h2>
         </div>
 
+        <div>
+          <h3 class="resume-title">Joke of the Day</h3>
+          <div id="response"></div>
+          <script>
+            function displayJoke(){
+              $.get("https://v2.jokeapi.dev/joke/Any", function(result) {
+              if(result) {
+                $("#response").html(encodeString(result.joke));
+               } else {
+                 $("#response".html("Null input"));
+               }
+            });
+        }
+          
+          setInterval(displayJoke, 60000);
+        </script>
+        </div>
+
         <div id="email" onclick="showhideEmail()">Show my email</div>
         <script>
           var shown = false;
