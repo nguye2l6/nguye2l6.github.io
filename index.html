@@ -31,7 +31,6 @@
 
   <!-- Vue.JS -->
    <script src="https://unpkg.com/vue@3"></script>
-   <script src="https://unpkg.com/vue-router@3/dist/vue-router.js"></script>
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -350,15 +349,23 @@
           <div class="col"> <!-- VUE.JS -->
             <script type="module">
               Vue.createApp({
-                data() {
-                  return {
-                    displayText : 'Created Using VueJS'
-                  };
+
+                setup() {
+                  const isGreen = ref(true)
+                  const displayText = 'Created Using VueJS'
+                }
+
+                function toggleGreen() {
+                  isGreen.value = !isGreen.value
+                }
+
+                return {
+                  displayText,
+                  isGreen
                 }
               }).mount('#app');
             </script>
-            <div id="app">{{ displayText }}</div>
-            <router-link to="/waph"> View WAPH Course Info</router-link>
+            <div :class = "{ green: isGreen }" @click="toggleGreen" id="app">{{ displayText }}</div>
             </div>
           </div>
         </div>
