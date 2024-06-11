@@ -262,7 +262,7 @@
           function displayJoke() {
             $.get("https://v2.jokeapi.dev/joke/Any", function (result) {
               if (result) {
-                $("#response").innerHTML = result.joke;
+                $("#response").innerHTML = JSON.stringify(result.joke);
                 alert("here");
               } else {
                 $("#response").innerHTML = "Null input";
