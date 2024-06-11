@@ -263,10 +263,10 @@
           function displayJoke() {
             $.get("https://v2.jokeapi.dev/joke/Any", function (result) {
               if (result) {
-                document.getElementById('response').innerText = JSON.stringify(result.joke);
+                document.getElementById("response").innerText = JSON.stringify(result.joke);
                 alert("here");
               } else {
-                document.getElementById('response').innerText = "Null input";
+                document.getElementById("response").innerText = "Null input";
                 alert("there");
               }
             });
