@@ -256,77 +256,102 @@
         <div class="section-title">
           <h2>JavaScript</h2>
         </div>
+        <h3 class="resume-title">Joke of the Day (DISCLAIMER: RANDOM JOKE BY WEBAPI)</h3>
+        <div class="row">
+          <!-- column one-->
+          <div class="col">
+            <div id="response"></div>
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+              integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"> </script>
+            <script>
+              function displayJoke() {
+                $.get("https://v2.jokeapi.dev/joke/Any", function (result) {
+                  if (result) {
+                    $("#response").html(encodeString(result.joke));
+                  } else {
+                    $("#response".html("Null input"));
+                  }
+                });
+              }
+              setInterval(displayJoke, 60000);
+            </script>
+          </div>
 
-        <div>
-          <h3 class="resume-title">Joke of the Day</h3>
-          <div id="response"></div>
-          <script src = "https://code.jquery.com/jquery-3.7.1.min.js"
-							integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"> </script>
-          <script>
-            function displayJoke(){
-              $.get("https://v2.jokeapi.dev/joke/Any", function(result) {
-              if(result) {
-                $("#response").html(encodeString(result.joke));
-               } else {
-                 $("#response".html("Null input"));
-               }
-            });
-        }
-          
-        setInterval(displayJoke, 60000);
-        </script>
-        </div>
+          <div class="col"> <!-- column two-->
+            <div id=" email" onclick="showhideEmail()">Show my email</div>
+            <script>
+              var shown = false;
+              function showhideEmail() {
+                if (shown) {
+                  document.getElementById('email').innerHTML = "Show my email";
+                  shown = false;
+                } else {
+                  var myemail = "<a href='mailto:nguye2l6" + "@" + "ucmail.uc.edu'>nguye2l6"
+                    + "@" + "ucmail.uc.edu</a>";
+                  document.getElementById('email').innerHTML = myemail;
+                  shown = true;
+                }
+              }
+            </script>
+          </div>
+          <div class="col"> <!--col three-->
+            <div id=" email" onclick="showhideEmail()">Show my email</div>
+            <script>
+              var shown = false;
+              function showhideEmail() {
+                if (shown) {
+                  document.getElementById('email').innerHTML = "Show my email";
+                  shown = false;
+                } else {
+                  var myemail = "<a href='mailto:nguye2l6" + "@" + "ucmail.uc.edu'>nguye2l6"
+                    + "@" + "ucmail.uc.edu</a>";
+                  document.getElementById('email').innerHTML = myemail;
+                  shown = true;
+                }
+              }
+            </script>
+          </div>
+          <div class="col"> <!--col four-->
+            <div id="digit-clock"></div>
+            <script>
+              function displayTime() {
+                document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+              }
+              setInterval(displayTime, 500);
+            </script>
+            <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+            <script src="https://waph-uc.github.io/clock.js"></script>
+            <script>
+              var canvas = document.getElementById("analog-clock");
+              var ctx = canvas.getContext("2d");
+              var radius = canvas.height / 2;
+              ctx.translate(radius, radius);
+              radius = radius * 0.9;
+              setInterval(drawClock, 1000);
 
-        <div id="email" onclick="showhideEmail()">Show my email</div>
-        <script>
-          var shown = false;
-          function showhideEmail() {
-            if (shown) {
-              document.getElementById('email').innerHTML = "Show my email";
-              shown = false;
-            } else {
-              var myemail = "<a href='mailto:nguye2l6" + "@" + "ucmail.uc.edu'>nguye2l6"
-                + "@" + "ucmail.uc.edu</a>";
-              document.getElementById('email').innerHTML = myemail;
-              shown = true;
-            }
-          }
-        </script>
-        <div id="digit-clock"></div>
-        <script>
-          function displayTime() {
-            document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
-          }
-          setInterval(displayTime, 500);
-        </script>
-        <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
-        <script src="https://waph-uc.github.io/clock.js"></script>
-        <script>
-          var canvas = document.getElementById("analog-clock");
-          var ctx = canvas.getContext("2d");
-          var radius = canvas.height / 2;
-          ctx.translate(radius, radius);
-          radius = radius * 0.9;
-          setInterval(drawClock, 1000);
+              function drawClock() {
+                drawFace(ctx, radius);
+                drawNumbers(ctx, radius);
+                drawTime(ctx, radius);
+              }
+            </script>
+          </div>
+        </div> <!-- end row-->
 
-          function drawClock() {
-            drawFace(ctx, radius);
-            drawNumbers(ctx, radius);
-            drawTime(ctx, radius);
-          }
-        </script>
-
+        <!-- page tracker -->
+        <a href="https://info.flagcounter.com/R4wV"><img
+            src="https://s11.flagcounter.com/map/R4wV/size_s/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/"
+            alt="Flag Counter" border="0"></a>
         <!-- Cookies -->
-         <script>
-
+        <script>
           const date = new Date();
-          if(document.cookie.indexOf("date")<0){
+          if (document.cookie.indexOf("date") < 0) {
             alert("Welcome to my homepage for the first time!");
-          }else{
+          } else {
             alert("Welcome back!, Your last visit was " + date);
           }
           document.cookie = "date" + "=" + date + ";";
-         </script>
+        </script>
 
       </div>
     </section><!-- End JavaScript Section -->
@@ -402,9 +427,6 @@
   <footer id="footer">
     <div class="container">
       <h3>Long Nguyen</h3>
-      <a href="https://info.flagcounter.com/FOlN"><img
-          src="https://s01.flagcounter.com/count2/FOlN/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
-          alt="Flag Counter" border="0"></a>
       <div class="social-links">
         <a href="https://github.com/nguye2l6/nguye2l6.github.io" class="github"><i class="bx bxl-github"></i></a>
         <a href="https://www.linkedin.com/in/long-nguyen-6293a0234/" class="linkedin"><i
