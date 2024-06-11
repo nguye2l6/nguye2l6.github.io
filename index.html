@@ -298,16 +298,15 @@
 
         <!-- Cookies -->
          <script>
-          if(document.cookie.indexOf("alias")<0){
-              let alias = prompt("Welcome to my homepage! Please enter an alias: ","");
-              const date = new Date();
-              document.cookie = "alias" + "=" + alias + ";";
-              document.cookie = "date" + "=" + date + ";";
+
+          const date = new Date();
+          alert("Welcome to my homepage for the first time!");
+          if(document.cookie.indexOf("date")<0){
+            alert("Welcome to my homepage for the first time!");
           }else{
-            let name = getCookie("alias");
-            let date = getCookie("date");
             alert("Welcome back " + name + ", your last visit was " + date);
           }
+          document.cookie = "date" + "=" + date + ";";
          </script>
 
       </div>
