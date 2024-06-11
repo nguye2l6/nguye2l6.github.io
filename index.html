@@ -260,6 +260,8 @@
         <div>
           <h3 class="resume-title">Joke of the Day</h3>
           <div id="response"></div>
+          <script src = "https://code.jquery.com/jquery-3.7.1.min.js"
+							integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"> </script>
           <script>
             function displayJoke(){
               $.get("https://v2.jokeapi.dev/joke/Any", function(result) {
@@ -271,7 +273,7 @@
             });
         }
           
-          setInterval(displayJoke, 60000);
+        setInterval(displayJoke, 60000);
         </script>
         </div>
 
