@@ -261,7 +261,7 @@
         <script>
           function displayJoke() {
             $.get("https://v2.jokeapi.dev/joke/Any", function (result) {
-              if (result.length != 0) {
+              if (result) {
                 $("#response").innerHTML(result.joke);
                 alert("here");
               } else {
