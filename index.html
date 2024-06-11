@@ -31,6 +31,7 @@
 
   <!-- Vue.JS -->
    <script src="https://unpkg.com/vue@3"></script>
+   <script src="https://unpkg.com/vue-router@3/dist/vue-router.js"></script>
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -348,19 +349,16 @@
           </div>
           <div class="col"> <!-- VUE.JS -->
             <script type="module">
-              import {createApp, ref} from 'vue'
-
-              createApp({
-                setup(){
-                  const message = ref('Created Using VUE.JS')
+              Vue.createApp({
+                data() {
                   return {
-                    message
-                  }
+                    displayText : 'Created Using VueJS'
+                  };
                 }
-              }).mount('#app')
+              }).mount('#app');
             </script>
-            <div id="app">{{ message }}</div>
-            
+            <div id="app">{{ displayText }}</div>
+            <router-link to="/waph"> View WAPH Course Info</router-link>
             </div>
           </div>
         </div>
