@@ -261,19 +261,20 @@
         <script>
           function displayJoke() {
             $.get("https://v2.jokeapi.dev/joke/Any", function (result) {
-              if (result) {
+              if (result.length != 0) {
                 $("#response").html(encodeString(result.joke));
                 $("#response").html("test");
               } else {
                 $("#response".html("Null input"));
+                $("#response").html("test2");
               }
             });
           }
           displayJoke();
-          setInterval(displayJoke, 1000);
+          setInterval(displayJoke, 10000);
         </script>
 
-        <div id="response"> Joke Here </div>
+        <p id="response"> Joke Here </p>
         <div class="row">
           <!-- column one-->
           <div class="col"> 
