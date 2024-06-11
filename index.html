@@ -257,7 +257,7 @@
           <h2>JavaScript</h2>
         </div>
         <h3 class="resume-title">Joke of the Day (DISCLAIMER: RANDOM JOKE BY WEBAPI)</h3>
-
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"> </script>
         <script>
           function displayJoke() {
             $.get("https://v2.jokeapi.dev/joke/Any", function (result) {
@@ -267,16 +267,15 @@
                 $("#response".html("Null input"));
               }
             });
+            alert("test");
           }
-          setInterval(displayJoke, 60000);
+          setInterval(displayJoke, 1000);
         </script>
 
         <div id="response"> Joke Here </div>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"> </script>
-
         <div class="row">
           <!-- column one-->
-          <div class="col"> <!-- column two-->
+          <div class="col"> 
             <div id="email" onclick="showhideEmail()">Show my email</div>
             <script>
               var shown = false;
@@ -293,24 +292,8 @@
               }
             </script>
           </div>
-          <div class="col"> <!--col three-->
-            <div id=" email" onclick="showhideEmail()">Show my email</div>
-            <script>
-              var shown = false;
-              function showhideEmail() {
-                if (shown) {
-                  document.getElementById('email').innerHTML = "Show my email";
-                  shown = false;
-                } else {
-                  var myemail = "<a href='mailto:nguye2l6" + "@" + "ucmail.uc.edu'>nguye2l6"
-                    + "@" + "ucmail.uc.edu</a>";
-                  document.getElementById('email').innerHTML = myemail;
-                  shown = true;
-                }
-              }
-            </script>
-          </div>
-          <div class="col"> <!--col four-->
+          <!--col two-->
+          <div class="col"> 
             <div id="digit-clock"></div>
             <script>
               function displayTime() {
@@ -336,6 +319,14 @@
             </script>
           </div>
         </div> <!-- end row-->
+        <div class="row">
+          <div class="col">
+
+          </div>
+          <div class="col">
+
+          </div>
+        </div>
 
         <!-- page tracker -->
         <a href="https://info.flagcounter.com/R4wV"><img
