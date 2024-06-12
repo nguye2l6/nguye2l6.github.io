@@ -307,12 +307,12 @@
               var shown = false;
               function showhideEmail() {
                 if (shown) {
-                  $('email')[0].innerHTML = "Show my email";
+                  $("email")[0].innerHTML = "Show my email";
                   shown = false;
                 } else {
                   var myemail = "<a href='mailto:nguye2l6" + "@" + "ucmail.uc.edu'>nguye2l6"
                     + "@" + "ucmail.uc.edu</a>";
-                  $('email')[0].innerHTML = myemail;
+                  $("email")[0].innerHTML = myemail;
                   shown = true;
                 }
               }
@@ -321,7 +321,7 @@
             <div id="digit-clock"></div>
             <script>
               function displayTime() {
-                $('digit-clock')[0].innerHTML = "Current time: " + new Date();
+                $("digit-clock")[0].innerHTML = "Current time: " + new Date();
               }
               setInterval(displayTime, 500);
             </script>
