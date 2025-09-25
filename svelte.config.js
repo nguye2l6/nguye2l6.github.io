@@ -10,4 +10,6 @@ const config = {
 	}
 };
 
+config.paths = { base: process.argv.includes('dev') ? '' : "/nguye2l6.github.io" }
+
 export default config;
